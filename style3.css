@@ -2,13 +2,13 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: Courrier
+	font-family: Courrier;
 }
 
 header{
 	width: 100%;
 	height: 100vh;
-	background-image: url("image");
+	background-image: url("https://raw.githubusercontent.com/bbarbie/bbarbie.github.io/main/icons/background2.jpg");
 	background-color: #eec4ff;
 	background-position: center;
 	background-size: cover;
