@@ -1,81 +1,278 @@
 *{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: Courrier;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-header{
+body{
+	background-color: #0D1720;
+	color: white;
+}
+
+.bg_video{
+	position: fixed; 
+	right: 0; 
+	bottom: 0;
+	min-width: 100%; 
+	min-height: 100%;
+	width: auto; 
+	height: auto; 
+	z-index: -1000;
+	background-size: cover; 
+}
+
+video{
 	width: 100%;
-	height: 100vh;
-	background-image: url("https://raw.githubusercontent.com/bbarbie/bbarbie.github.io/main/icons/background1.gif");
-	background-color: #eec4ff;
-	background-position: center;
-	background-size: cover;
+	height: auto;
 }
 
-a{
-	text-decoration: none;
+.cardcolor{
+	background-color: #381D66;
 }
 
-header .menu{
-	position: fixed;
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 40px;
+.textcolor{
+	color: #fff;
 }
 
-header .menu li{
-	display: inline-block;
+.icons{
+	width: 130px;
 }
 
-header .menu a{
-	color: white;
-	padding: 8px 12px;
-	border-radius: 3px;
-	transition: 200ms;
+.loginlogo{
+	width: 400px;
 }
 
-header .menu p{
-	padding: 8px 12px;
+
+
+	/* login */
+
+
+.wrap-login {
+  width: 400px;
+  background: #381D66;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 77px 55px 53px 55px;
 }
 
-header .menu .ativo, header .menu a:hover{
-	color: white;
-	background-color: #9370DB;
+.wrap-input100 {
+  width: 100%;
+  position: relative;
+  border-bottom: 2px solid #adadad;
+  margin-bottom: 37px;
 }
 
-.principal{
-	height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
+.input100 {
+  font-family: Poppins-Regular;
+  font-size: 15px;
+  color: #555555;
+  line-height: 1.2;
+
+  display: block;
+  width: 100%;
+  height: 45px;
+  background: transparent;
+  padding: 0 5px;
 }
 
-.principal h2{
-	color: white;
-	text-shadow: 5px 4px #6600CC;
-	font-size: 60px;
+
+.login-form-btn {
+  font-family: Poppins-Medium;
+  font-size: 20px;
+  color: #fff;
+  background-color: #A008E9;
+  border-radius: 40px 5px;
+  line-height: 1.2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  width: 100%;
+  height: 50px;
 }
 
-.principal .links a{
-	color: white;
-	padding: 10px 18px;
-	display: inline-block;
-	border: 1px solid white;
-	border-radius: 3px;
-	margin-top: 20px;
-	transition: 200ms;
+
+	/* sidebar */
+
+
+.sidebar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 78px;
+  background: #381D66;
+  padding: 6px 14px;
+  z-index: 99;
+  transition: all 0.5s ease;
+}
+.sidebar.active{
+  width: 240px
+}
+.sidebar .logo_content .logo{
+  color: #fff;
+  display: flex;
+  height: 50px;
+  width: 100%;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+.sidebar.active .logo_content .logo{
+  opacity: 1;
+  pointer-events: none;
+}
+.logo_content .logo i{
+  font-size: 28px;
+  margin-right: 5px;
+}
+.logo_content .logo .logo_name{
+  font-size: 20px;
+  font-weight: 400;
+}
+.sidebar #btn{
+  position: absolute;
+  color: #fff;
+  top: 6px;
+  left: 50%;
+  font-size: 22px;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 50px;
+  transform: translateX(-50%);
+}
+.sidebar.active #btn{
+  left: 90%;
+}
+.sidebar ul{
+  margin-top: 20px;
+}
+.sidebar ul li{
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin: 0 5px;
+  list-style: none;
+  line-height: 50px;
+  margin: 5px 0;
+}
+.sidebar ul li .tooltip{
+  position: absolute;
+  left: 125px;
+  top: 0;
+  transform: translate(-50% , -50%);
+  border-radius: 6px;
+  height: 35px;
+  width: 120px;
+  background: #fff;
+  color: #381D66;
+  font-family: Courrier;
+  font-size: 17px;
+  line-height: 35px;
+  text-align: center;
+  transition: 0s;
+  opacity: 0;
+  pointer-events: none;
+  display: block;
+}
+.sidebar.active ul li .tooltip{
+  display: none;
+}
+.sidebar ul li:hover .tooltip{
+  transition: all 0.5s ease;
+  opacity: 1;
+  top: 50%
+}
+.sidebar ul li input{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 12px;
+  outline: none;
+  border: none;
+  background: #1d1b31;
+  padding-left: 50px;
+  font-size: 18px;
+  color: #fff;
 }
 
-.principal .links a:hover{
-	color: #6600CC;
-	font-size: 25px;
-	background-color: #FFB9FF;
+.sidebar ul li a{
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 12px;
+  white-space: nowrap;
+  transition: all 0.4s ease;
 }
+.sidebar ul li a:hover{
+  color: #11101d;
+  background: #E109FF;
+}
+.sidebar ul li i{
+  font-size: 18px;
+  font-weight: 400;
+  height: 50px;
+  min-width: 50px;
+  border-radius: 12px;
+  line-height: 50px;
+  text-align: center;
+}
+.sidebar .links_name{
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.sidebar.active .links_name{
+  transition: 0s;
+  opacity: 1;
+  pointer-events: auto
+}
+.logout #log_out{
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.4s ease;
+  background: #1d1b31;
+}
+.sidebar.active .logout #log_out{
+  left: 88%;
+  background: none;
+}
+.home_content{
+  position: absolute;
+  height: 100%;
+  width: calc(100% - 78px);
+  left: 78px;
+  background-color: #0D1720;
+  transition: all 0.5s ease;
+}
+.sidebar.active ~ .home_content{
+  z-index: 100;
+}
+.home_content .text{
+  font-size: 25px;
+  font-weight: 500;
+  color: #1d1b31;
+  margin: 12px;
+}
+.sidebar.active ~ .home_content{
+  width: calc(100% - 240px);
+  left: 240px;
+}
+
 
 
 
